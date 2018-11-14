@@ -26,6 +26,8 @@ public class WriteResources {
     @POST
     @Path("/kc")
     public Response writeKC(KCWriteRequest request) throws Exception {
+        //1. check existance of tag string
+        
         return Response.ok().build();
     }
 

@@ -12,7 +12,7 @@ public class KCApplication extends Application<KCConfiguration> {
 
     @Override
     public void run(KCConfiguration configuration, Environment environment) {
-        // let's ee what we gotta do here
+        // let's see what we gotta do here
         // register resources, do some bookkeeping as per configuration etc
         environment.jersey().register(new WriteResources(configuration));
         environment.jersey().register(new SearchResources(configuration));

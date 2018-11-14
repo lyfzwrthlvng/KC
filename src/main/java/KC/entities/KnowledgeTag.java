@@ -1,5 +1,7 @@
 package KC.entities;
 
+import org.hibernate.annotations.Index;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,11 +11,11 @@ import javax.persistence.Table;
 @Table
 public class KnowledgeTag {
 
-
     @Id
     @GeneratedValue
     private Integer id;
 
+    @Index(name="index_tag")
     private String tag;
 
     public KnowledgeTag(){

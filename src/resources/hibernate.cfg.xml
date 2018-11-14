@@ -13,6 +13,7 @@
         <property name="connection.pool_size">1</property>
 
         <mapping class="KC.entities.Knowledge"></mapping>
+        <mapping class="KC.entities.KnowledgeTag"></mapping>
 
     </session-factory>
 </hibernate-configuration>
