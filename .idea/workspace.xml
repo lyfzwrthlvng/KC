@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e034227-d59c-474a-8e00-e1df02849b07" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/KC/DbOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/KC/entities/DummyJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/KC/entities/UserKC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/KC/entities/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_22.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_1_9_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_17_1_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_0_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KC_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/KC_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KC/KCApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KC/KCApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KC/entities/KCAccessRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KC/entities/KCAccessRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KC/entities/KCQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KC/entities/KCQueryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KC/entities/KCWriteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KC/entities/KCWriteRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KC/entities/Knowledge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KC/entities/Knowledge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KC/entities/KnowledgeMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KC/entities/KnowledgeMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KC/entities/KnowledgeTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KC/entities/KnowledgeTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KC/resources/WriteResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KC/resources/WriteResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KC/KCApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KC/KCApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KC/entities/KCAccessRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KC/entities/KCAccessRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KC/entities/KCQueryRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KC/entities/KCQueryRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KC/entities/KCWriteRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KC/entities/KCWriteRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KC/entities/Knowledge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KC/entities/Knowledge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KC/entities/KnowledgeTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KC/entities/KnowledgeTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KC/resources/WriteResources.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KC/resources/WriteResources.class" afterDir="false" />
-    </list>
+    <list default="true" id="1e034227-d59c-474a-8e00-e1df02849b07" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +15,8 @@
       <file leaf-file-name="WriteResources.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/KC/resources/WriteResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+            <state relative-caret-position="267">
+              <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -418,12 +380,12 @@
       <workItem from="1542213780439" duration="2358000" />
       <workItem from="1542867907702" duration="3672000" />
       <workItem from="1543049306119" duration="4933000" />
-      <workItem from="1543933719185" duration="4202000" />
+      <workItem from="1543933719185" duration="4507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23449000" />
+    <option name="totallyTimeSpent" value="23754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="0" />
@@ -447,12 +409,12 @@
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32561308" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32561308" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32833788" />
       <window_info id="Persistence" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Run with VisualVM" order="11" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19670959" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19670959" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Theme Preview" order="6" />
@@ -888,8 +850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KC/resources/WriteResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+        <state relative-caret-position="267">
+          <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
