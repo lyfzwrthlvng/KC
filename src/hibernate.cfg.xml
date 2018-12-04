@@ -10,7 +10,7 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/kcdb</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
         <property name="show_sql">true</property>
-        <property name="connection.pool_size">10</property>
+        <property name="connection.pool_size">1</property>
 
         <mapping class="KC.entities.Knowledge"></mapping>
         <mapping class="KC.entities.KnowledgeTag"></mapping>

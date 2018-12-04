@@ -4,21 +4,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class KCAccessRequest {
     @JsonProperty
-    String userkey;
+    String userKey;
 
     @JsonProperty
     String passKey;
 
-    public KCAccessRequest(String userKey) {
-        this.userkey = userKey;
-    }
+    @JsonProperty
+    Integer userId;
 
     public String getUserkey() {
-        return userkey;
+        return userKey;
     }
 
     public void setUserkey(String key) {
-        this.userkey = userkey;
+        this.userKey = key;
     }
 
     public String getPassKey() {
@@ -27,5 +26,13 @@ public class KCAccessRequest {
 
     public void setPassKey(String key){
         this.passKey = passKey;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

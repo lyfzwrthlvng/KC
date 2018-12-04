@@ -1,5 +1,6 @@
 package KC.entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class KCWriteRequest extends KCAccessRequest {
@@ -9,10 +10,6 @@ public class KCWriteRequest extends KCAccessRequest {
 
     @JsonProperty
     String value;
-
-    public KCWriteRequest(String userKey) {
-        super(userKey);
-    }
 
     public String getKeyword() {
         return keyword;

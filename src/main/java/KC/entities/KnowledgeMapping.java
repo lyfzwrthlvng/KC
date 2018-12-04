@@ -1,21 +1,22 @@
 package KC.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class KnowledgeMapping {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     Integer tagId;
 
     Integer cloudId;
+
+    public KnowledgeMapping(){
+
+    }
 
     KnowledgeMapping(Integer id, Integer tagId, Integer cloudId) {
         this.id = id;

@@ -16,6 +16,5 @@ public class KCApplication extends Application<KCConfiguration> {
         // register resources, do some bookkeeping as per configuration etc
         environment.jersey().register(new WriteResources(configuration));
         environment.jersey().register(new SearchResources(configuration));
-
     }
 }

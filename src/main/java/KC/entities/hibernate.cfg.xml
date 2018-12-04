@@ -15,6 +15,7 @@
         <mapping class="KC.entities.Knowledge"></mapping>
         <mapping class="KC.entities.KnowledgeTag"></mapping>
         <mapping class="KC.entities.KnowledgeMapping"></mapping>
+        <mapping class="KC.entities.UserKC"></mapping>
 
     </session-factory>
 </hibernate-configuration>
