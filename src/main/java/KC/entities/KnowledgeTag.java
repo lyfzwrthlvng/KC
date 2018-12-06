@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class KnowledgeTag {
+public class KnowledgeTag implements KCEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

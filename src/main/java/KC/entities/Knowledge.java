@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class Knowledge {
+public class Knowledge implements KCEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
