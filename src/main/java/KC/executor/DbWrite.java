@@ -4,9 +4,16 @@ import KC.DbOperations;
 import KC.entities.*;
 
 public class DbWrite implements Node {
+
+    KCWriteRequest request;
+
+    DbWrite(KCAccessRequest request) {
+        this.request = (KCWriteRequest) request;
+    }
+
     @Override
-    public boolean process(KCAccessRequest request) {
-        KCWriteRequest writeRequest = (KCWriteRequest)request;
+    public boolean process() {
+        KCWriteRequest writeRequest = request;
         //1. check existance of tag string
         Knowledge knowledge = new Knowledge();
         knowledge.setCloud(writeRequest.getValue());
@@ -36,5 +43,10 @@ public class DbWrite implements Node {
         DbOperations.persistKCEntity(userKC);
 
         return true;
+    }
+
+    @Override
+    public boolean process(KCAccessRequest request) {
+        return false;
     }
 }

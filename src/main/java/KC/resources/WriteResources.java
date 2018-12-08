@@ -20,7 +20,7 @@ import javax.ws.rs.core.Response;
 @Produces(MediaType.APPLICATION_JSON)
 public class WriteResources {
     KCConfiguration config;
-    Machine machine
+    Machine machine = new Machine();
 
     public WriteResources(KCConfiguration config){
         this.config = config;
