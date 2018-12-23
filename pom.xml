@@ -51,18 +51,11 @@
       <artifactId>hibernate-core</artifactId>
       <version>5.2.6.Final</version>
     </dependency>
-
     <dependency>
-      <groupId>com.hubspot.dropwizard</groupId>
-      <artifactId>dropwizard-guice</artifactId>
-      <version>0.7.0.2</version>
+      <groupId>org.sonatype.sisu</groupId>
+      <artifactId>sisu-guice</artifactId>
+      <version>2.1.7</version>
     </dependency>
-
-      <dependency>
-          <groupId>com.google.inject</groupId>
-          <artifactId>guice</artifactId>
-          <version>3.0</version>
-      </dependency>
 
   </dependencies>
 

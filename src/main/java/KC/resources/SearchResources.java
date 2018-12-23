@@ -1,7 +1,9 @@
 package KC.resources;
 
+import KC.Delegator;
 import KC.KCConfiguration;
 import KC.entities.KCQueryRequest;
+import com.google.inject.Inject;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,9 +19,12 @@ import java.util.Map;
 public class SearchResources {
 
     KCConfiguration config;
+    Delegator delegator;
 
-    public SearchResources(KCConfiguration config) {
+    @Inject
+    public SearchResources(KCConfiguration config, Delegator delegator) {
         this.config = config;
+        this.delegator = delegator;
     }
 
     @POST

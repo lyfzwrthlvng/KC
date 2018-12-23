@@ -2,6 +2,7 @@ package KC;
 
 import KC.constants.EndService;
 import KC.constants.ExecutionStep;
+import KC.entities.KCAccessRequest;
 import KC.executor.Machine;
 import KC.executor.Node;
 
@@ -15,7 +16,8 @@ public class Delegator {
     private HashMap<ExecutionStep, Class<?>> executionMap = null;
 
     Delegator() {
-
+        services = new HashMap<EndService, ArrayList<ExecutionStep>>();
+        executionMap = new HashMap<ExecutionStep, Class<?>>();
     }
 
     public void registerExeuctionStep(ExecutionStep step, Class<?> clazz) {
@@ -32,7 +34,7 @@ public class Delegator {
         }
     }
 
-    public Machine getMachine(EndService service) throws IllegalAccessException, InstantiationException {
+    public Machine getMachine(EndService service, KCAccessRequest request) throws IllegalAccessException, InstantiationException {
         if(!services.containsKey(service)) {
             return null;
         }
@@ -41,7 +43,7 @@ public class Delegator {
             Class clazz = executionMap.get(step);
             executionList.add((Node)clazz.newInstance()); // create new instance here, use injector?!
         }
-        Machine machine = new Machine(executionList, service);
+        Machine machine = new Machine(executionList, service, request);
         return machine;
     }
 

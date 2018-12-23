@@ -5,9 +5,11 @@ import KC.entities.*;
 
 public class DbWrite implements Node {
 
-    KCWriteRequest request;
+    private KCWriteRequest request;
 
-    DbWrite(KCAccessRequest request) {
+    public DbWrite() {}
+
+    public DbWrite(KCAccessRequest request) {
         this.request = (KCWriteRequest) request;
     }
 
@@ -47,6 +49,7 @@ public class DbWrite implements Node {
 
     @Override
     public boolean process(KCAccessRequest request) {
-        return false;
+        this.request = (KCWriteRequest) request;
+        return process();
     }
 }
