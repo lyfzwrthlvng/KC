@@ -9,6 +9,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class DbOperations {
     public static SessionFactory factoryS = null;
@@ -37,5 +38,20 @@ public class DbOperations {
 
         session.close();
         return entity.getId();
+    }
+
+    public static KnowledgeTag getKnowledgeTag(String tag) {
+        Session session = getSessionFactory().openSession();
+
+        return (KnowledgeTag) session.get(KnowledgeTag.class, tag);
+    }
+
+    public static ArrayList<Knowledge> getKnowledge(KnowledgeTag tag) {
+        ArrayList<Knowledge> knowledges = new ArrayList<>();
+        Session session = getSessionFactory().openSession();
+        KnowledgeMapping mapping = session.get(KnowledgeMapping.class, tag.getId());
+        Knowledge knowledge = session.get(Knowledge.class, mapping.getCloudId());
+        knowledges.add(knowledge);
+        return knowledges;
     }
 }

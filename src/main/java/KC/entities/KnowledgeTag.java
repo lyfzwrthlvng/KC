@@ -12,7 +12,7 @@ public class KnowledgeTag implements KCEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Index(name="index_tag")
+    @Index(name="tag")
     private String tag;
 
     public KnowledgeTag(){

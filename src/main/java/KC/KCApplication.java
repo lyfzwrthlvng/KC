@@ -3,6 +3,7 @@ package KC;
 import KC.constants.EndService;
 import KC.constants.ExecutionStep;
 import KC.executor.Authentication;
+import KC.executor.DbRead;
 import KC.executor.DbWrite;
 import KC.resources.SearchResources;
 import KC.resources.WriteResources;
@@ -36,11 +37,15 @@ public class KCApplication extends Application<KCConfiguration> {
     private void registerServices() {
         delegator.registerToService(EndService.WRITE_KNOWLEDGE, ExecutionStep.Authentication);
         delegator.registerToService(EndService.WRITE_KNOWLEDGE, ExecutionStep.DbWrite);
+
+        delegator.registerToService(EndService.FIND_KNOWLEDGE, ExecutionStep.Authentication);
+        delegator.registerToService(EndService.FIND_KNOWLEDGE, ExecutionStep.DbRead);
     }
 
     private void registerExecutionSteps() {
         delegator.registerExeuctionStep(ExecutionStep.Authentication, Authentication.class);
         delegator.registerExeuctionStep(ExecutionStep.DbWrite, DbWrite.class);
+        delegator.registerExeuctionStep(ExecutionStep.DbRead, DbRead.class);
     }
 
 }

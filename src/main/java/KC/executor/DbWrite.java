@@ -19,32 +19,45 @@ public class DbWrite implements Node {
         //1. check existance of tag string
         Knowledge knowledge = new Knowledge();
         knowledge.setCloud(writeRequest.getValue());
-        //knowledge.setId(1);
-        KnowledgeTag tag = new KnowledgeTag();
-        tag.setTag(writeRequest.getKeyword());
+        KnowledgeTag tag = null;
 
-        // write all
-        //int knowledgeId = DbOperations.persistKnowledge(knowledge);
+        // this assumes KnowledgeTag is indexed on tag
+        tag = DbOperations.getKnowledgeTag(writeRequest.getKeyword());
+        int tagId;
+        if(tag == null) {
+            tag = new KnowledgeTag();
+            tag.setTag(writeRequest.getKeyword());
+            tagId = DbOperations.persistKCEntity(tag);
+        } else {
+
+            tagId = tag.getId();
+        }
+        //2. write the cloud
         int knowledgeId = DbOperations.persistKCEntity(knowledge);
-        //int tagId = DbOperations.persistKnowledgeTag(tag);
-        int tagId = DbOperations.persistKCEntity(tag);
 
+        //3. Persist knowledge tag mapping
         KnowledgeMapping mapping = new KnowledgeMapping();
         mapping.setTagId(tagId);
         mapping.setCloudId(knowledgeId);
 
-        //DbOperations.persistKnowledgeMapping(mapping);
         DbOperations.persistKCEntity(mapping);
 
+        //4. persist user tag mapping
         UserKC userKC = new UserKC();
-        //userKC.setId();
         userKC.setUserId(request.getUserId());
         userKC.setKnowledgeTagId(tagId);
-
-        //DbOperations.persistUserKC(userKC);
         DbOperations.persistKCEntity(userKC);
-
         return true;
+    }
+
+    @Override
+    public NodeResult getOutput() {
+        return null;
+    }
+
+    @Override
+    public void setOutput(NodeResult result) {
+
     }
 
     @Override
