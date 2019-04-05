@@ -2,6 +2,7 @@ package KC.executor;
 
 import KC.DbOperations;
 import KC.entities.*;
+import org.apache.commons.lang3.StringUtils;
 
 public class DbWrite implements Node {
 
@@ -21,15 +22,15 @@ public class DbWrite implements Node {
         knowledge.setCloud(writeRequest.getValue());
         KnowledgeTag tag = null;
 
+        Integer userId = writeRequest.getUserId();
+
         // this assumes KnowledgeTag is indexed on tag
-        tag = DbOperations.getKnowledgeTag(writeRequest.getKeyword());
+        tag = DbOperations.getKnowledgeTagByUserAndTag(writeRequest.getKeyword(), userId);
         int tagId;
-        if(tag == null) {
-            tag = new KnowledgeTag();
+        if(StringUtils.isBlank(tag.getTag())) {
             tag.setTag(writeRequest.getKeyword());
             tagId = DbOperations.persistKCEntity(tag);
         } else {
-
             tagId = tag.getId();
         }
         //2. write the cloud

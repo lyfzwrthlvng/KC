@@ -41,12 +41,22 @@ public class DbOperations {
         return entity.getId();
     }
 
-    public static KnowledgeTag getKnowledgeTag(String tag) {
+    public static KnowledgeTag getKnowledgeTagByUserAndTag(String tag, int userId) {
+        KnowledgeTag resultTag = new KnowledgeTag();
         Session session = getSessionFactory().openSession();
-        TypedQuery query = session.getNamedQuery("findTagByKeyword");
-        query.setParameter("keyword",tag);
-        KnowledgeTag knowledgeTag = (KnowledgeTag) query.getSingleResult();
-        return knowledgeTag;
+
+        TypedQuery queryUKC = session.getNamedQuery("findKnowledgeTagIdByUserId");
+        queryUKC.setParameter("userId", userId);
+        ArrayList<UserKC> listUKC = (ArrayList) queryUKC.getResultList();
+
+        for(UserKC userKC: listUKC) {
+            KnowledgeTag kt = session.get(KnowledgeTag.class, userKC.getKnowledgeTagId());
+            if(kt.getTag().equalsIgnoreCase(tag)) {
+                resultTag = kt;
+                break;
+            }
+        }
+        return resultTag;
     }
 
     public static ArrayList<Knowledge> getKnowledge(KnowledgeTag tag) {

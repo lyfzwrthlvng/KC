@@ -13,7 +13,7 @@ public class DbRead implements Node {
 
         ArrayList<Knowledge> knowledges = new ArrayList<>();
         for(String keyword: readRequest.getKeywordList()) {
-            KnowledgeTag tag = DbOperations.getKnowledgeTag(keyword);
+            KnowledgeTag tag = DbOperations.getKnowledgeTagByUserAndTag(keyword, readRequest.getUserId());
             knowledges.addAll(DbOperations.getKnowledge(tag));
         }
         NodeResult result = new NodeResult();

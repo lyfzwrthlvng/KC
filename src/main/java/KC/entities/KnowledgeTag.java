@@ -9,6 +9,10 @@ import javax.persistence.*;
                 @NamedQuery(
                         name = "findTagByKeyword",
                         query = "from KnowledgeTag kt where kt.tag = :keyword"
+                ),
+                @NamedQuery(
+                        name = "findTagByKeywordAndUserId",
+                        query = "from KnowledgeTag kt where kt.tag = :keyword"
                 )
         }
 )
