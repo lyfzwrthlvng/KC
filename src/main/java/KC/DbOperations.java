@@ -8,6 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import javax.persistence.TypedQuery;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -42,16 +43,22 @@ public class DbOperations {
 
     public static KnowledgeTag getKnowledgeTag(String tag) {
         Session session = getSessionFactory().openSession();
-
-        return (KnowledgeTag) session.get(KnowledgeTag.class, tag);
+        TypedQuery query = session.getNamedQuery("findTagByKeyword");
+        query.setParameter("keyword",tag);
+        KnowledgeTag knowledgeTag = (KnowledgeTag) query.getSingleResult();
+        return knowledgeTag;
     }
 
     public static ArrayList<Knowledge> getKnowledge(KnowledgeTag tag) {
         ArrayList<Knowledge> knowledges = new ArrayList<>();
         Session session = getSessionFactory().openSession();
-        KnowledgeMapping mapping = session.get(KnowledgeMapping.class, tag.getId());
-        Knowledge knowledge = session.get(Knowledge.class, mapping.getCloudId());
-        knowledges.add(knowledge);
+        TypedQuery<KnowledgeMapping> kmQuery = session.getNamedQuery("findKnowledgeMappingByTagId");
+        kmQuery.setParameter("tagId", tag.getId());
+        ArrayList<KnowledgeMapping> mappings = (ArrayList<KnowledgeMapping>) kmQuery.getResultList();
+        for(KnowledgeMapping mapping: mappings) {
+            Knowledge knowledge = session.get(Knowledge.class, mapping.getCloudId());
+            knowledges.add(knowledge);
+        }
         return knowledges;
     }
 }

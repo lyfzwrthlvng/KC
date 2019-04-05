@@ -31,11 +31,11 @@ public class DbRead implements Node {
 
     @Override
     public NodeResult getOutput() {
-        return null;
+        return output;
     }
 
     @Override
     public void setOutput(NodeResult result) {
-
+        output.setResult(result.getResult());
     }
 }

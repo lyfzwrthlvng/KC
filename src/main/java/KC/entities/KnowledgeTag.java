@@ -4,6 +4,15 @@ import org.hibernate.annotations.Index;
 
 import javax.persistence.*;
 
+@NamedQueries(
+        {
+                @NamedQuery(
+                        name = "findTagByKeyword",
+                        query = "from KnowledgeTag kt where kt.tag = :keyword"
+                )
+        }
+)
+
 @Entity
 @Table
 public class KnowledgeTag implements KCEntity {

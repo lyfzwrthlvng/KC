@@ -2,6 +2,15 @@ package KC.entities;
 
 import javax.persistence.*;
 
+@NamedQueries(
+        {
+                @NamedQuery(
+                        name = "findKnowledgeMappingByTagId",
+                        query = "from KnowledgeMapping km where km.tagId = :tagId"
+                )
+        }
+)
+
 @Entity
 @Table
 public class KnowledgeMapping implements KCEntity {

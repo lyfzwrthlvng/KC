@@ -7,7 +7,7 @@ public interface Node {
     // An execution node
     //KCAccessRequest request = null;
 
-    NodeResult output = null;
+    NodeResult output = new NodeResult();
 
     public boolean process(KCAccessRequest request);
     public boolean process();
