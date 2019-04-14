@@ -8,7 +8,9 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import javax.persistence.TypedQuery;
 import java.io.File;
+import java.util.ArrayList;
 
 public class DbOperations {
     public static SessionFactory factoryS = null;
@@ -37,5 +39,36 @@ public class DbOperations {
 
         session.close();
         return entity.getId();
+    }
+
+    public static KnowledgeTag getKnowledgeTagByUserAndTag(String tag, int userId) {
+        KnowledgeTag resultTag = new KnowledgeTag();
+        Session session = getSessionFactory().openSession();
+
+        TypedQuery queryUKC = session.getNamedQuery("findKnowledgeTagIdByUserId");
+        queryUKC.setParameter("userId", userId);
+        ArrayList<UserKC> listUKC = (ArrayList) queryUKC.getResultList();
+
+        for(UserKC userKC: listUKC) {
+            KnowledgeTag kt = session.get(KnowledgeTag.class, userKC.getKnowledgeTagId());
+            if(kt.getTag().equalsIgnoreCase(tag)) {
+                resultTag = kt;
+                break;
+            }
+        }
+        return resultTag;
+    }
+
+    public static ArrayList<Knowledge> getKnowledge(KnowledgeTag tag) {
+        ArrayList<Knowledge> knowledges = new ArrayList<>();
+        Session session = getSessionFactory().openSession();
+        TypedQuery<KnowledgeMapping> kmQuery = session.getNamedQuery("findKnowledgeMappingByTagId");
+        kmQuery.setParameter("tagId", tag.getId());
+        ArrayList<KnowledgeMapping> mappings = (ArrayList<KnowledgeMapping>) kmQuery.getResultList();
+        for(KnowledgeMapping mapping: mappings) {
+            Knowledge knowledge = session.get(Knowledge.class, mapping.getCloudId());
+            knowledges.add(knowledge);
+        }
+        return knowledges;
     }
 }

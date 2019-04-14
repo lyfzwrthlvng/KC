@@ -2,8 +2,27 @@ server:
   applicationConnectors:
     - type: http
       port: 9090
+    - type: https
+      port: 8090
+      keyStorePath: /Users/shrey.malik/machines/revel/keys/clientkeystore
+      keyStorePassword: bingO123!
   adminConnectors:
     - type: http
       port: 9091
+
+logging:
+  level: DEBUG
+  loggers:
+    "io.dropwizard": DEBUG
+    "org.hibernate.SQL":
+      level: DEBUG
+      additive: false
+      appenders:
+        - type: file
+          currentLogFilename: /var/log/myapplication-sql.log
+          archivedLogFilenamePattern: /var/log/myapplication-sql-%d.log.gz
+          archivedFileCount: 5
+  appenders:
+    - type: console
 
 notEmptySample: "hello there"

@@ -2,6 +2,15 @@ package KC.entities;
 
 import javax.persistence.*;
 
+@NamedQueries(
+        {
+                @NamedQuery(
+                        name = "findKnowledgeBy",
+                        query = "from KnowledgeTag kt where kt.tag = :keyword"
+                )
+        }
+)
+
 @Entity
 @Table
 public class Knowledge implements KCEntity {

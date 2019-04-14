@@ -4,6 +4,19 @@ import org.hibernate.annotations.Index;
 
 import javax.persistence.*;
 
+@NamedQueries(
+        {
+                @NamedQuery(
+                        name = "findTagByKeyword",
+                        query = "from KnowledgeTag kt where kt.tag = :keyword"
+                ),
+                @NamedQuery(
+                        name = "findTagByKeywordAndUserId",
+                        query = "from KnowledgeTag kt where kt.tag = :keyword"
+                )
+        }
+)
+
 @Entity
 @Table
 public class KnowledgeTag implements KCEntity {
@@ -12,7 +25,7 @@ public class KnowledgeTag implements KCEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Index(name="index_tag")
+    @Index(name="tag")
     private String tag;
 
     public KnowledgeTag(){

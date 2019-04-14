@@ -2,7 +2,9 @@ package KC.resources;
 
 import KC.Delegator;
 import KC.KCConfiguration;
+import KC.constants.EndService;
 import KC.entities.KCQueryRequest;
+import KC.executor.Machine;
 import com.google.inject.Inject;
 
 import javax.ws.rs.GET;
@@ -29,9 +31,11 @@ public class SearchResources {
 
     @POST
     @Path("/query")
-    public Response query(KCQueryRequest request) {
+    public Response query(KCQueryRequest request) throws Exception {
         // make query to db at the simplest
-        return Response.ok().build();
+        Machine executionMachine = delegator.getMachine(EndService.FIND_KNOWLEDGE, request);
+        executionMachine.execute();
+        return Response.ok().entity(executionMachine.getResult()).build();
     }
 
     @GET
