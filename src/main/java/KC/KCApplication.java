@@ -5,6 +5,7 @@ import KC.constants.ExecutionStep;
 import KC.executor.Authentication;
 import KC.executor.DbRead;
 import KC.executor.DbWrite;
+import KC.executor.SmartSentence;
 import KC.resources.SearchResources;
 import KC.resources.WriteResources;
 import com.google.inject.Guice;
@@ -36,6 +37,7 @@ public class KCApplication extends Application<KCConfiguration> {
 
     private void registerServices() {
         delegator.registerToService(EndService.WRITE_KNOWLEDGE, ExecutionStep.Authentication);
+        delegator.registerToService(EndService.WRITE_KNOWLEDGE, ExecutionStep.ExtractTags);
         delegator.registerToService(EndService.WRITE_KNOWLEDGE, ExecutionStep.DbWrite);
 
         delegator.registerToService(EndService.FIND_KNOWLEDGE, ExecutionStep.Authentication);
@@ -46,6 +48,7 @@ public class KCApplication extends Application<KCConfiguration> {
         delegator.registerExeuctionStep(ExecutionStep.Authentication, Authentication.class);
         delegator.registerExeuctionStep(ExecutionStep.DbWrite, DbWrite.class);
         delegator.registerExeuctionStep(ExecutionStep.DbRead, DbRead.class);
+        delegator.registerExeuctionStep(ExecutionStep.ExtractTags, SmartSentence.class);
     }
 
 }

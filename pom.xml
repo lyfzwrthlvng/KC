@@ -67,6 +67,16 @@
       <artifactId>dropwizard-auth</artifactId>
       <version>1.0.5</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.opennlp</groupId>
+      <artifactId>opennlp-tools</artifactId>
+      <version>1.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.opennlp</groupId>
+      <artifactId>opennlp-uima</artifactId>
+      <version>1.9.1</version>
+    </dependency>
 
   </dependencies>
 
