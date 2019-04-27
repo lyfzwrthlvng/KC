@@ -132,5 +132,7 @@
     <orderEntry type="library" name="Maven: org.sonatype.sisu:sisu-guice:2.1.7" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.opennlp:opennlp-tools:1.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.opennlp:opennlp-uima:1.9.1" level="project" />
   </component>
 </module>
