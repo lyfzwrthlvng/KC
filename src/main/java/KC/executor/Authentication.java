@@ -30,4 +30,10 @@ public class Authentication implements Node {
 
     }
 
+    @Override
+    public String getResultNameForNode() {
+        // Doesn't really need a result
+        return "Auth";
+    }
+
 }

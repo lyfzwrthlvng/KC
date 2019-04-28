@@ -18,7 +18,7 @@ public class DbRead implements Node {
         }
         NodeResult result = new NodeResult();
         HashMap<String, Object> map = new HashMap<>();
-        map.put("Knowledge", knowledges);
+        map.put(getResultNameForNode(), knowledges);
         result.setResult(map);
         setOutput(result);
         return true;
@@ -37,5 +37,11 @@ public class DbRead implements Node {
     @Override
     public void setOutput(NodeResult result) {
         output.setResult(result.getResult());
+    }
+
+    @Override
+    public String getResultNameForNode() {
+        // Doesn't really need a result
+        return "Knowledge";
     }
 }

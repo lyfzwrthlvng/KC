@@ -62,6 +62,12 @@ public class DbWrite implements Node {
     }
 
     @Override
+    public String getResultNameForNode() {
+        // Doesn't really need a result
+        return null;
+    }
+
+    @Override
     public boolean process(KCAccessRequest request) {
         this.request = (KCWriteRequest) request;
         return process();

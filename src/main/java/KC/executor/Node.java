@@ -13,5 +13,6 @@ public interface Node {
     public boolean process();
     public NodeResult getOutput();
     public void setOutput(NodeResult result);
+    String getResultNameForNode();
 
 }

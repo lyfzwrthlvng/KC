@@ -1,8 +1,9 @@
-package KC.executor;
+package KC.executor.nlp;
 
 import KC.entities.KCAccessRequest;
 import KC.entities.KCWriteRequest;
 import KC.entities.NodeResult;
+import KC.executor.Node;
 import opennlp.tools.sentdetect.SentenceDetector;
 import opennlp.tools.sentdetect.SentenceDetectorME;
 import opennlp.tools.sentdetect.SentenceModel;
@@ -53,5 +54,11 @@ public class SmartSentence implements Node {
     @Override
     public void setOutput(NodeResult result) {
         output.setResult(result.getResult());
+    }
+
+    @Override
+    public String getResultNameForNode() {
+        // Doesn't really need a result
+        return "Sentences";
     }
 }
