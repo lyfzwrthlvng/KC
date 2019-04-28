@@ -5,6 +5,7 @@ import KC.constants.ExecutionStep;
 import KC.executor.Authentication;
 import KC.executor.DbRead;
 import KC.executor.DbWrite;
+import KC.executor.nlp.SentenceTokenize;
 import KC.executor.nlp.SmartSentence;
 import KC.resources.SearchResources;
 import KC.resources.WriteResources;
@@ -41,13 +42,17 @@ public class KCApplication extends Application<KCConfiguration> {
 
         delegator.registerToService(EndService.FIND_KNOWLEDGE, ExecutionStep.Authentication);
         delegator.registerToService(EndService.FIND_KNOWLEDGE, ExecutionStep.DbRead);
+
+        delegator.registerToService(EndService.SUGGEST_TAGS, ExecutionStep.Authentication);
+        delegator.registerToService(EndService.SUGGEST_TAGS, ExecutionStep.ExtractTags);
     }
 
     private void registerExecutionSteps() {
         delegator.registerExeuctionStep(ExecutionStep.Authentication, Authentication.class);
         delegator.registerExeuctionStep(ExecutionStep.DbWrite, DbWrite.class);
         delegator.registerExeuctionStep(ExecutionStep.DbRead, DbRead.class);
-        delegator.registerExeuctionStep(ExecutionStep.ExtractTags, SmartSentence.class);
+        //delegator.registerExeuctionStep(ExecutionStep.ExtractTags, SmartSentence.class);
+        delegator.registerExeuctionStep(ExecutionStep.ExtractTags, SentenceTokenize.class);
     }
 
 }

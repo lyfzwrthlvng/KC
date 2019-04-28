@@ -9,6 +9,7 @@ import opennlp.tools.tokenize.TokenizerModel;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class SentenceTokenize implements Node {
 
@@ -28,7 +29,12 @@ public class SentenceTokenize implements Node {
     public boolean process(KCAccessRequest request) {
         KCWriteRequest writeRequest = (KCWriteRequest) request;
         String[] tokens = tokenizer.tokenize(writeRequest.getValue());
-        return false;
+        NodeResult result = new NodeResult();
+        HashMap<String, Object> resultMap = new HashMap<>();
+        resultMap.put(getResultNameForNode(), tokens);
+        result.setResult(resultMap);
+        setOutput(result);
+        return true;
     }
 
     @Override
@@ -38,12 +44,12 @@ public class SentenceTokenize implements Node {
 
     @Override
     public NodeResult getOutput() {
-        return null;
+        return output;
     }
 
     @Override
     public void setOutput(NodeResult result) {
-
+        output.setResult(result.getResult());
     }
 
     @Override

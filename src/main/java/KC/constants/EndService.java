@@ -5,5 +5,6 @@ public enum EndService {
     UPDATE_USER,
     WRITE_KNOWLEDGE,
     FIND_KNOWLEDGE,
-    DELETE_KNOWLEDGE
+    DELETE_KNOWLEDGE,
+    SUGGEST_TAGS
 }

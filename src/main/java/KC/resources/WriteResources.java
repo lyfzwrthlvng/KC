@@ -58,6 +58,21 @@ public class WriteResources {
     }
 
     @POST
+    @Path("/extractTags")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response extractTags(KCWriteRequest request) throws Exception {
+        Machine executionMachine = delegator.getMachine(EndService.SUGGEST_TAGS, request);
+        Boolean result = executionMachine.execute();
+        Response response = null;
+        if(!result) {
+            response = Response.serverError().build();
+        } else {
+            response = Response.ok().entity(executionMachine.getResult()).build();
+        }
+        return response;
+    }
+
+    @POST
     @Path("/dummy")
     public Response dummy(DummyJson dummyJson){
         return Response.ok().entity(dummyJson.getDummyString()).build();
